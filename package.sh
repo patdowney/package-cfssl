@@ -75,6 +75,8 @@ package_arch_version(){
 	package_arch=${arch}
 	if [ "${arch}" == "386" ]; then
 		package_arch="i386"
+	elif [ "${arch}" == "arm" ]; then
+		package_arch="armhf"
 	fi
 
 	package_version=${version}-${build_number}

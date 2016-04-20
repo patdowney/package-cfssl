@@ -4,10 +4,13 @@
     "repo": "cfssl-deb",
     "subject": "patdowney"
   },
+  "version": {
+    "name": "1.2"
+  },
   "files":
   [
     {
-      "includePattern": "(.*_amd64\\.deb)",
+      "includePattern": "(.*?_1\\.2.*?_amd64\\.deb)",
       "uploadPattern": "$1",
       "matrixParams": {
         "deb_distribution": "precise,trusty,vivid",
@@ -15,7 +18,7 @@
         "deb_architecture": "amd64"}
     },
     {
-      "includePattern": "(.*_i386\\.deb)",
+      "includePattern": "(.*?_1\\.2.*?_i386\\.deb)",
       "uploadPattern": "$1",
       "matrixParams": {
         "deb_distribution": "precise,trusty,vivid",
