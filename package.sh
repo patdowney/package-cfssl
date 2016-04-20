@@ -1,9 +1,12 @@
 #!/bin/bash
 
-versions=(1.1 1.2)
+#versions=(1.1 1.2)
+versions=(1.2)
 platforms=(linux)
-architectures=(386 amd64 arm)
-targets=(rpm deb)
+#architectures=(386 amd64 arm)
+architectures=(amd64)
+#targets=(rpm deb)
+targets=(deb)
 
 build_number=${TRAVIS_BUILD_NUMBER:-1}
 
