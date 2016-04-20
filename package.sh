@@ -110,6 +110,7 @@ package_arch_version(){
     	  --name "cfssl" \
           --version "${package_version}" \
 	  --architecture ${package_arch} \
+	  --description "CloudFlare's PKI toolkit" \
 	  --maintainer "Pat Downey <pat.downey+package-cfssl@gmail.com>" \
 	  --url "https://github.com/patdowney/package-cfssl" \
 	  --deb-user root \
