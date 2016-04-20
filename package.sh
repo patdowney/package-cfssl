@@ -5,6 +5,8 @@ platforms=(linux)
 architectures=(386 amd64 arm)
 targets=(rpm deb)
 
+build_number=${TRAVIS_BUILD_NUMBER:-1}
+
 checksum_file() {
 	local file
 
@@ -75,15 +77,16 @@ package_arch_version(){
 		package_arch="i386"
 	fi
 
-	package_file=cfssl_${version}_${package_arch}.${pkg_type}
+	package_version=${version}-${build_number}
+	package_file=cfssl_${package_version}_${package_arch}.${pkg_type}
 
 	rm -f ${package_file}
 
 	bundle exec fpm -C ${version}/${arch} -t ${pkg_type} -s dir \
     	  --prefix /usr/bin \
-	  --package "cfssl_${version}_${package_arch}.${pkg_type}" \
+	  --package "${package_file}" \
     	  --name "cfssl" \
-  	  --version "${version}" \
+          --version "${package_version}" \
 	  --architecture ${package_arch} \
 	  --maintainer "Pat Downey <pat.downey+package-cfssl@gmail.com>" \
 	  --url "https://github.com/patdowney/package-cfssl" \
