@@ -66,7 +66,7 @@ package_arch_version(){
 	version=$2
 	arch=$3
 
-	fpm -t ${pkg_type} -s dir \
+	bundle exec fpm -t ${pkg_type} -s dir \
     	  --prefix /usr/bin \
 	  --package "../../cfssl_${version}_${arch}.${pkg_type}" \
     	  --name "cfssl" \
@@ -78,6 +78,10 @@ package_arch_version(){
 	  --deb-group root \
 	  --verbose \
 	  .
+
+	if [ $? -ne 0 ]; then
+		exit 1
+	fi
 }
 
 for ver in ${versions[@]}
