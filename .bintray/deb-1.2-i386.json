@@ -12,7 +12,8 @@
     "public_stats": false
   },
   "version": {
-    "name": "1.2"
+    "name": "1.2",
+    "gpgSign": true
   },
   "files":
   [
