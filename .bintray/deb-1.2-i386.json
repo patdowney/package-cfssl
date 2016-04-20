@@ -24,5 +24,6 @@
         "deb_component": "main",
         "deb_architecture": "i386"}
     }
-  ]
+  ],
+  "publish": true
 }
