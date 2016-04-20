@@ -97,6 +97,10 @@ do
         echo "download checksums"
 	rm -f SHA256SUMS
         wget https://pkg.cfssl.org/R${ver}/SHA256SUMS
+	if [ $? -ne 0 ]; then
+		echo "failed to download https://pkg.cfssl.org/R${ver}/SHA256SUMS"
+		exit 1
+	fi
 
 	echo "download version: ${ver}"
 	for arch in ${architectures[@]}
