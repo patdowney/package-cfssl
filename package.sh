@@ -115,6 +115,7 @@ package_arch_version(){
 	  --deb-user root \
 	  --deb-group root \
 	  --verbose \
+	  ../LICENSE=../share/doc/cfssl/ \
 	  .
 
 	if [ $? -ne 0 ]; then
@@ -142,8 +143,12 @@ do
 	popd
 done
 
+
 for ver in ${versions[@]}
 do
+	# download licence
+	curl -o ${ver}/LICENSE https://raw.githubusercontent.com/cloudflare/cfssl/${ver}.0/LICENSE
+
 	for arch in ${architectures[@]}
 	do
 		for target in ${targets[@]}
