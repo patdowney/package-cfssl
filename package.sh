@@ -5,10 +5,6 @@ platforms=(linux)
 architectures=(386 amd64 arm)
 targets=(rpm deb)
 
-#https://pkg.cfssl.org/R${version}/cfssl-bundle_linux-arm
-
-#wget https://pkg.cfssl.org/R${version}/SHA256SUMS
-
 checksum_file() {
 	local file
 
