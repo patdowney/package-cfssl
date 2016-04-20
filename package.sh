@@ -66,12 +66,17 @@ package_arch_version(){
 	version=$2
 	arch=$3
 
-	bundle exec fpm -t ${pkg_type} -s dir \
+	package_arch=${arch}
+	if [ "${arch}" == "386" ]; then
+		package_arch="i386"
+	fi
+
+	bundle exec fpm -C ${version}/${arch} -t ${pkg_type} -s dir \
     	  --prefix /usr/bin \
-	  --package "../../cfssl_${version}_${arch}.${pkg_type}" \
+	  --package "../../cfssl_${version}_${package_arch}.${pkg_type}" \
     	  --name "cfssl" \
   	  --version "${version}" \
-	  --architecture ${arch} \
+	  --architecture ${package_arch} \
 	  --maintainer "Pat Downey <pat.downey+package-cfssl@gmail.com>" \
 	  --url "https://github.com/patdowney/package-cfssl" \
 	  --deb-user root \
@@ -99,15 +104,20 @@ do
 		mkdir -p ${arch}
 		pushd ${arch}
 		download_arch_version ${ver} ${arch}
-		for target in ${targets[@]}
-		do
-			if [ "${arch}" == "386" ]; then
-				arch="i386"
-			fi
-			package_arch_version ${target} ${ver} ${arch}
-		done
 		popd
 	done
 	popd
 done
+
+for ver in ${versions[@]}
+do
+	for arch in ${architectures[@]}
+	do
+		for target in ${targets[@]}
+		do
+			package_arch_version ${target} ${ver} ${arch}
+		done
+	done
+done
+
 
