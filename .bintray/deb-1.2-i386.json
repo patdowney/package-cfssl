@@ -1,0 +1,28 @@
+{
+  "package": {
+    "name": "cfssl",
+    "repo": "cfssl-deb",
+    "subject": "patdowney",
+    "desc": "Debian packages of Cloudflare's CFSSL tool",
+    "website_url": "https://cfssl.org",
+    "issue_tracker_url": "https://github.com/cloudflare/cfssl/issues",
+    "vcs_url": "https://github.com/cloudflare/cfssl.git",
+    "licenses": ["BSD 2-Clause"],
+    "public_download_numbers": false,
+    "public_stats": false
+  },
+  "version": {
+    "name": "1.2"
+  },
+  "files":
+  [
+    {
+      "includePattern": "./(cfssl_1.2.*_i386.deb)",
+      "uploadPattern": "$1",
+      "matrixParams": {
+        "deb_distribution": "precise,trusty,vivid",
+        "deb_component": "main",
+        "deb_architecture": "i386"}
+    }
+  ]
+}
