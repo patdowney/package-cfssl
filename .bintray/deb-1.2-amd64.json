@@ -2,7 +2,7 @@
   "package": {
     "name": "cfssl",
     "repo": "cfssl-deb",
-    "subject": "patdowney"
+    "subject": "patdowney",
     "desc": "Debian packages of Cloudflare's CFSSL tool",
     "website_url": "https://cfssl.org",
     "issue_tracker_url": "https://github.com/cloudflare/cfssl/issues",
