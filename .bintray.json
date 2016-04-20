@@ -10,20 +10,12 @@
   "files":
   [
     {
-      "includePattern": "(.*?_1\\.2.*?_amd64\\.deb)",
+      "includePattern": "(.*_1\\.2.*_amd64\\.deb)",
       "uploadPattern": "$1",
       "matrixParams": {
         "deb_distribution": "precise,trusty,vivid",
         "deb_component": "main",
         "deb_architecture": "amd64"}
-    },
-    {
-      "includePattern": "(.*?_1\\.2.*?_i386\\.deb)",
-      "uploadPattern": "$1",
-      "matrixParams": {
-        "deb_distribution": "precise,trusty,vivid",
-        "deb_component": "main",
-        "deb_architecture": "i386"}
     }
   ]
 }
