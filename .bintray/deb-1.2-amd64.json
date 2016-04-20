@@ -17,12 +17,12 @@
   "files":
   [
     {
-      "includePattern": "./(cfssl_1.2.*_(amd64|i386).deb)",
+      "includePattern": "./(cfssl_1.2.*_amd64.deb)",
       "uploadPattern": "$1",
       "matrixParams": {
         "deb_distribution": "precise,trusty,vivid",
         "deb_component": "main",
-        "deb_architecture": "$2"}
+        "deb_architecture": "amd64"}
     }
   ]
 }
