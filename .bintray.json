@@ -1,0 +1,31 @@
+{
+  "package": {
+    "name": "auto-upload",
+    "repo": "cfssl-deb",
+    "subject": "patdowney"
+  }.
+  "files":
+  [
+    {
+      "includePattern": "(.*_amd64\.deb)", "uploadPattern": "$1",
+      "matrixParams": {
+        "deb_distribution": "precise,trusty,vivid",
+        "deb_component": "main",
+        "deb_architecture": "amd64"}
+    },
+    {
+      "includePattern": "(.*_i386\.deb)", "uploadPattern": "$1",
+      "matrixParams": {
+        "deb_distribution": "precise,trusty,vivid",
+        "deb_component": "main",
+        "deb_architecture": "i386"}
+    },
+    {
+      "includePattern": "(.*_armhf\.deb)", "uploadPattern": "$1",
+      "matrixParams": {
+        "deb_distribution": "precise,trusty,vivid",
+        "deb_component": "main",
+        "deb_architecture": "armhf"}
+    }
+  ]
+}
