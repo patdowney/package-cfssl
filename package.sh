@@ -1,11 +1,29 @@
 #!/bin/bash
 
-versions=(1.1 1.2)
-platforms=(linux)
+if [ -z "${PACKAGE_VERSION}" ]
+then
+	versions=(1.1 1.2)
+else
+	versions=${PACKAGE_VERSION}
+fi
+
 #architectures=(386 amd64 arm)
-architectures=(386 amd64)
+if [ -z "${PACKAGE_ARCH}" ];
+then
+	architectures=(386 amd64)
+else
+	architectures=${PACKAGE_ARCH}
+fi
+
+if [ -z "${PACKAGE_TARGET}" ];
+then
+	targets=(rpm deb)
+else
+	targets=${PACKAGE_TARGET}
+fi
+
 #targets=(rpm deb)
-targets=(deb)
+#targets=${PACKAGE_TARGET:-(deb)}
 
 build_number=${TRAVIS_BUILD_NUMBER:-1}
 

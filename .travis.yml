@@ -8,6 +8,12 @@ addons:
 language: ruby
 rvm:
 - 2.1.5
+env:
+- PACKAGE_TARGET=deb
+- PACKAGE_VERSION=1.1
+- PACKAGE_VERSION=1.2
+- PACKAGE_ARCH=amd64
+- PACKAGE_ARCH=i386
 install: bundle install
 script:
 - "./package.sh"
