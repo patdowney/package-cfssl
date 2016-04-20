@@ -21,7 +21,11 @@ download_file() {
 	file=$2
 
 	echo "downloading ${version} - ${file}"
-	wget https://pkg.cfssl.org/R${version}/${file}
+	curl -sf -o ${file} https://pkg.cfssl.org/R${version}/${file}
+	if [ $? -ne 0 ]; then
+		echo "failed to download https://pkg.cfssl.org/R${version}/${file}"
+		exit 1
+	fi
 }
 
 download_arch_version() {
@@ -71,9 +75,13 @@ package_arch_version(){
 		package_arch="i386"
 	fi
 
+	package_file=cfssl_${version}_${package_arch}.${pkg_type}
+
+	rm -f ${package_file}
+
 	bundle exec fpm -C ${version}/${arch} -t ${pkg_type} -s dir \
     	  --prefix /usr/bin \
-	  --package "../../cfssl_${version}_${package_arch}.${pkg_type}" \
+	  --package "cfssl_${version}_${package_arch}.${pkg_type}" \
     	  --name "cfssl" \
   	  --version "${version}" \
 	  --architecture ${package_arch} \
@@ -96,11 +104,7 @@ do
 
         echo "download checksums"
 	rm -f SHA256SUMS
-        wget https://pkg.cfssl.org/R${ver}/SHA256SUMS
-	if [ $? -ne 0 ]; then
-		echo "failed to download https://pkg.cfssl.org/R${ver}/SHA256SUMS"
-		exit 1
-	fi
+	download_file ${ver} SHA256SUMS
 
 	echo "download version: ${ver}"
 	for arch in ${architectures[@]}
