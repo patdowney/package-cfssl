@@ -21,7 +21,7 @@ download_file() {
 	file=$2
 
 	echo "downloading ${version} - ${file}"
-	wget --secure-protocol=TLSv1_2 https://pkg.cfssl.org/R${version}/${file}
+	wget --secure-protocol=TLSv1 https://pkg.cfssl.org/R${version}/${file}
 }
 
 download_arch_version() {
@@ -96,7 +96,7 @@ do
 
         echo "download checksums"
 	rm -f SHA256SUMS
-        wget --secure-protocol=TLSv1_2 https://pkg.cfssl.org/R${ver}/SHA256SUMS
+        wget --secure-protocol=TLSv1 https://pkg.cfssl.org/R${ver}/SHA256SUMS
 
 	echo "download version: ${ver}"
 	for arch in ${architectures[@]}
