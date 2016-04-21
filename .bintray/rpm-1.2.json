@@ -12,17 +12,17 @@
     "public_stats": false
   },
   "version": {
-    "name": "1.1",
+    "name": "1.2",
     "gpgSign": true
   },
   "files":
   [
     {
-      "includePattern": "./(cfssl_1.1.*_amd64.rpm)",
+      "includePattern": "./(cfssl_1.2.*_amd64.rpm)",
       "uploadPattern": "$1"
     },
     {
-      "includePattern": "./(cfssl_1.1.*_i386.rpm)",
+      "includePattern": "./(cfssl_1.2.*_i386.rpm)",
       "uploadPattern": "$1"
     }
   ],
