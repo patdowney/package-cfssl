@@ -16,7 +16,6 @@ env:
 install: bundle install
 script:
 - "./package.sh"
-- "ls"
 deploy:
   - provider: bintray
     file: ".bintray/deb-1.1.json"
