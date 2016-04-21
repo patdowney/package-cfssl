@@ -1,0 +1,30 @@
+{
+  "package": {
+    "name": "cfssl",
+    "repo": "cfssl-rpm",
+    "subject": "patdowney",
+    "desc": "Debian packages of Cloudflare's CFSSL tool",
+    "website_url": "https://cfssl.org",
+    "issue_tracker_url": "https://github.com/cloudflare/cfssl/issues",
+    "vcs_url": "https://github.com/cloudflare/cfssl.git",
+    "licenses": ["BSD 2-Clause"],
+    "public_download_numbers": false,
+    "public_stats": false
+  },
+  "version": {
+    "name": "1.1",
+    "gpgSign": true
+  },
+  "files":
+  [
+    {
+      "includePattern": "./(cfssl_1.1.*_amd64.rpm)",
+      "uploadPattern": "$1",
+    },
+    {
+      "includePattern": "./(cfssl_1.2.*_i386.rpm)",
+      "uploadPattern": "$1",
+    }
+  ],
+  "publish": true
+}
