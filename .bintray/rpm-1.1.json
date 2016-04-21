@@ -19,11 +19,11 @@
   [
     {
       "includePattern": "./(cfssl_1.1.*_amd64.rpm)",
-      "uploadPattern": "$1",
+      "uploadPattern": "$1"
     },
     {
       "includePattern": "./(cfssl_1.2.*_i386.rpm)",
-      "uploadPattern": "$1",
+      "uploadPattern": "$1"
     }
   ],
   "publish": true
