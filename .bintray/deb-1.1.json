@@ -8,6 +8,7 @@
     "issue_tracker_url": "https://github.com/cloudflare/cfssl/issues",
     "vcs_url": "https://github.com/cloudflare/cfssl.git",
     "licenses": ["BSD 2-Clause"],
+    "github_repo": "cloudflare/cfssl",
     "public_download_numbers": false,
     "public_stats": false
   },
