@@ -32,7 +32,16 @@
         "deb_distribution": "precise,trusty,vivid",
         "deb_component": "main",
         "deb_architecture": "i386"}
+    },
+    {
+      "includePattern": "./(cfssl_1.2.*_armhf.deb)",
+      "uploadPattern": "$1",
+      "matrixParams": {
+        "deb_distribution": "precise,trusty,vivid",
+        "deb_component": "main",
+        "deb_architecture": "armhf"}
     }
+
   ],
   "publish": true
 }

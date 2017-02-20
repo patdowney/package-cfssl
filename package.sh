@@ -10,7 +10,7 @@ fi
 #architectures=(386 amd64 arm)
 if [ -z "${PACKAGE_ARCH}" ];
 then
-	architectures=(386 amd64)
+	architectures=(386 amd64 arm)
 else
 	architectures=${PACKAGE_ARCH}
 fi
