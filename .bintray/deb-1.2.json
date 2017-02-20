@@ -1,9 +1,9 @@
 {
   "package": {
     "name": "cfssl",
-    "repo": "cfssl-deb",
+    "repo": "deb",
     "subject": "patdowney",
-    "desc": "Debian packages of Cloudflare's CFSSL tool",
+    "desc": "Unofficial Debian packages of Cloudflare's CFSSL tool",
     "website_url": "https://cfssl.org",
     "issue_tracker_url": "https://github.com/cloudflare/cfssl/issues",
     "vcs_url": "https://github.com/cloudflare/cfssl.git",
@@ -21,7 +21,7 @@
       "includePattern": "./(cfssl_1.2.*_amd64.deb)",
       "uploadPattern": "$1",
       "matrixParams": {
-        "deb_distribution": "precise,trusty,vivid",
+        "deb_distribution": "precise,trusty,vivid,xenial",
         "deb_component": "main",
         "deb_architecture": "amd64"}
     },
@@ -29,7 +29,7 @@
       "includePattern": "./(cfssl_1.2.*_i386.deb)",
       "uploadPattern": "$1",
       "matrixParams": {
-        "deb_distribution": "precise,trusty,vivid",
+        "deb_distribution": "precise,trusty,vivid,xenial",
         "deb_component": "main",
         "deb_architecture": "i386"}
     },
@@ -37,7 +37,7 @@
       "includePattern": "./(cfssl_1.2.*_armhf.deb)",
       "uploadPattern": "$1",
       "matrixParams": {
-        "deb_distribution": "precise,trusty,vivid",
+        "deb_distribution": "precise,trusty,vivid,xenial",
         "deb_component": "main",
         "deb_architecture": "armhf"}
     }
