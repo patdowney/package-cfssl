@@ -103,7 +103,7 @@ package_arch_version(){
 	package_file=cfssl_${package_version}_${package_arch}.${pkg_type}
 
 	rm -f ${package_file}
-
+        cp -rf dist/cfssl ${version}/${arch}
 	bundle exec fpm -C ${version}/${arch} -t ${pkg_type} -s dir \
     	  --prefix /usr/bin \
 	  --package "${package_file}" \
@@ -113,9 +113,12 @@ package_arch_version(){
 	  --description "CloudFlare's PKI toolkit" \
 	  --maintainer "Pat Downey <pat.downey+package-cfssl@gmail.com>" \
 	  --url "https://github.com/patdowney/package-cfssl" \
+	  --rpm-user root \
+	  --rpm-group root \
 	  --deb-user root \
 	  --deb-group root \
 	  --verbose \
+	  ../../dist/cfssl/etc=../../etc \
 	  ../LICENSE=../share/doc/cfssl/ \
 	  .
 
