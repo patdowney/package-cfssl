@@ -118,7 +118,7 @@ package_arch_version(){
 	  --deb-user root \
 	  --deb-group root \
 	  --verbose \
-	  ../../dist/cfssl/etc=../../etc \
+	  ../../dist/cfssl/etc=../.. \
 	  ../LICENSE=../share/doc/cfssl/ \
 	  .
 
