@@ -9,8 +9,8 @@ Environment=MULTIROOTCA_TLS_KEY=/etc/cfssl/multiroot/multiroot-key.pem
 Environment=MULTIROOTCA_LOGLEVEL=0
 Environment=MULTIROOTCA_ROOTS=/etc/cfssl/multirootca.ini
 
-EnvironmentFile=/etc/defaults/multirootca
-ExecStart=/usr/bin/multirootca -a $MULTIROOTCA_ADDRESS -tls-key $MULTIROOT_TLS_KEY -tls-cert $MULTIROOT_TLS_CERT -loglevel $MULTIROOTCA_LOGLEVEL -roots ${MULTIROOTCA_ROOTS
+EnvironmentFile=/etc/default/multirootca
+ExecStart=/usr/bin/multirootca -a $MULTIROOTCA_ADDRESS -tls-key $MULTIROOT_TLS_KEY -tls-cert $MULTIROOT_TLS_CERT -loglevel $MULTIROOTCA_LOGLEVEL -roots $MULTIROOTCA_ROOTS
 ExecReload=/bin/kill -HUP $MAINPID
 LimitNOFILE=65536
 
