@@ -117,6 +117,9 @@ package_arch_version(){
 	  --rpm-group root \
 	  --deb-user root \
 	  --deb-group root \
+          --template-scripts \
+          --before-install scripts/before-install.${pkg_type}.sh \
+          --after-install scripts/after-install.${pkg_type}.sh \
 	  --verbose \
 	  ../../dist/cfssl/etc=../.. \
 	  ../LICENSE=../share/doc/cfssl/ \
